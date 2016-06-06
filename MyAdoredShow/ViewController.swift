@@ -48,6 +48,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       // let detailedView = DetailedMovieVC()
+        performSegueWithIdentifier("DetailedVC", sender: self)
+      //  detailedView.performSegueWithIdentifier("DetailedVC", sender: self)
+    }
     func fetchAndSetResults() {
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
@@ -60,9 +66,21 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let viewController:DetailedMovieVC = segue.destinationViewController as? DetailedMovieVC
-        let indexPath = self.tableView.indexPathForSelectedRow()
+      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "DetailedVC") {
+            let detailedView = segue.destinationViewController as? DetailedMovieVC
+            //let selectedRow = self.tableView.indexPathForSelectedRow?.row
+            let movie = movies[0]
+            print("Movie name: \(movie.movieName)")
+            print("Movie Desc: \(movie.movieDesc)")
+            print("Movie Img: \(movie.getMovieImageIMDB())")
+            detailedView?.mvTitle = movie.movieName
+            detailedView?.mvDesc = movie.movieDesc
+            detailedView?.mvIMDBPlot = movie.movieIMDBPlot
+            detailedView?.mvIMDBLink = movie.movieIMDBLink
+            detailedView?.mvImage = movie.getMovieImageIMDB()
+            
+        }
     }
 }
 

@@ -74,7 +74,4 @@ class AddMovieVC: UIViewController,UIImagePickerControllerDelegate, UINavigation
         movieImg.image = image
     }
    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        <#code#>
-    }
 }

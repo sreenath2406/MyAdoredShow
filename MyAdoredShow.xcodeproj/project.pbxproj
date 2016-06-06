@@ -21,6 +21,10 @@
 		22FDE6FF1D0284B0004C4F55 /* MyAdoredShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE6FE1D0284B0004C4F55 /* MyAdoredShowTests.swift */; };
 		22FDE70A1D0284B0004C4F55 /* MyAdoredShowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE7091D0284B0004C4F55 /* MyAdoredShowUITests.swift */; };
 		22FDE7181D0287AE004C4F55 /* MovieCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDE7171D0287AE004C4F55 /* MovieCustomCell.swift */; };
+		D7E215D01D05697B00EE4958 /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E215CF1D05697B00EE4958 /* SF-UI-Text-Regular.otf */; };
+		D7E215D21D05698900EE4958 /* SF-UI-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E215D11D05698900EE4958 /* SF-UI-Text-RegularItalic.otf */; };
+		D7E215D41D0569A500EE4958 /* SF-UI-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D7E215D31D0569A500EE4958 /* SF-UI-Text-Light.otf */; };
+		D7E215D71D05840C00EE4958 /* WebPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E215D61D05840C00EE4958 /* WebPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		22FDE7091D0284B0004C4F55 /* MyAdoredShowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdoredShowUITests.swift; sourceTree = "<group>"; };
 		22FDE70B1D0284B0004C4F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22FDE7171D0287AE004C4F55 /* MovieCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCustomCell.swift; sourceTree = "<group>"; };
+		D7E215CF1D05697B00EE4958 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		D7E215D11D05698900EE4958 /* SF-UI-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-RegularItalic.otf"; sourceTree = "<group>"; };
+		D7E215D31D0569A500EE4958 /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
+		D7E215D61D05840C00EE4958 /* WebPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +121,13 @@
 		22FDE6E51D0284B0004C4F55 /* MyAdoredShow */ = {
 			isa = PBXGroup;
 			children = (
+				D7E215D51D0569AA00EE4958 /* Fonts */,
 				22FDE6E61D0284B0004C4F55 /* AppDelegate.swift */,
 				22FDE6E81D0284B0004C4F55 /* ViewController.swift */,
 				22F394481D032E9300AA33B4 /* AddMovieVC.swift */,
 				22F3944A1D04682800AA33B4 /* DetailedMovieVC.swift */,
 				22FDE6EA1D0284B0004C4F55 /* Main.storyboard */,
+				D7E215D61D05840C00EE4958 /* WebPageVC.swift */,
 				22FDE7171D0287AE004C4F55 /* MovieCustomCell.swift */,
 				2227BC521D02BB4C0010D3BB /* Movie.swift */,
 				22FDE6F01D0284B0004C4F55 /* Assets.xcassets */,
@@ -144,6 +154,16 @@
 				22FDE70B1D0284B0004C4F55 /* Info.plist */,
 			);
 			path = MyAdoredShowUITests;
+			sourceTree = "<group>";
+		};
+		D7E215D51D0569AA00EE4958 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D7E215CF1D05697B00EE4958 /* SF-UI-Text-Regular.otf */,
+				D7E215D31D0569A500EE4958 /* SF-UI-Text-Light.otf */,
+				D7E215D11D05698900EE4958 /* SF-UI-Text-RegularItalic.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +272,9 @@
 			files = (
 				22FDE6F41D0284B0004C4F55 /* LaunchScreen.storyboard in Resources */,
 				22FDE6F11D0284B0004C4F55 /* Assets.xcassets in Resources */,
+				D7E215D21D05698900EE4958 /* SF-UI-Text-RegularItalic.otf in Resources */,
+				D7E215D01D05697B00EE4958 /* SF-UI-Text-Regular.otf in Resources */,
+				D7E215D41D0569A500EE4958 /* SF-UI-Text-Light.otf in Resources */,
 				22FDE6EC1D0284B0004C4F55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E215D71D05840C00EE4958 /* WebPageVC.swift in Sources */,
 				22F3944B1D04682800AA33B4 /* DetailedMovieVC.swift in Sources */,
 				22F394441D030E9100AA33B4 /* Entity+CoreDataProperties.swift in Sources */,
 				22FDE6EF1D0284B0004C4F55 /* MyAdoredShow.xcdatamodeld in Sources */,
@@ -430,9 +454,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyAdoredShow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mylearnings.MyAdoredShow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Debug;
 		};
@@ -441,9 +469,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyAdoredShow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mylearnings.MyAdoredShow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 			};
 			name = Release;
 		};
