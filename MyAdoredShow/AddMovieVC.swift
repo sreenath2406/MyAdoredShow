@@ -29,6 +29,8 @@ class AddMovieVC: UIViewController,UIImagePickerControllerDelegate, UINavigation
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
+        self.title = "Add Movie"
+
     }
 
     override func didReceiveMemoryWarning() {

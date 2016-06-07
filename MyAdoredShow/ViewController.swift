@@ -54,6 +54,27 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         performSegueWithIdentifier("DetailedVC", sender: self)
       //  detailedView.performSegueWithIdentifier("DetailedVC", sender: self)
     }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == .Delete) {
+            let app  = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = app.managedObjectContext
+            print("movies index is\(indexPath.row)")
+            let movie = movies[indexPath.row ]
+            context.deleteObject(movie)
+            movies.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            do {
+               try  context.save()
+            } catch let err as NSError {
+                print(err.localizedDescription)
+            }
+        }
+    }
     func fetchAndSetResults() {
         let app = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = app.managedObjectContext
@@ -69,8 +90,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "DetailedVC") {
             let detailedView = segue.destinationViewController as? DetailedMovieVC
-            //let selectedRow = self.tableView.indexPathForSelectedRow?.row
-            let movie = movies[0]
+            let selectedRow = self.tableView.indexPathForSelectedRow?.row
+            let movie = movies[selectedRow!]
             print("Movie name: \(movie.movieName)")
             print("Movie Desc: \(movie.movieDesc)")
             print("Movie Img: \(movie.getMovieImageIMDB())")
